@@ -4,6 +4,8 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
+import com.mygdx.game.screens.NewMenuScreen;
+
 import java.util.HashMap;
 
 public class PiazzaPanic extends Game {
@@ -19,7 +21,7 @@ public class PiazzaPanic extends Game {
 	public void create () {
 		loadJson();
 		menuScreen = new MenuScreen(this);
-		setScreen(menuScreen);
+		setScreen(new NewMenuScreen());
 	}
 
 	public void startGame()
