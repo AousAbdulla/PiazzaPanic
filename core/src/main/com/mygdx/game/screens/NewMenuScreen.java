@@ -36,7 +36,7 @@ public class NewMenuScreen implements Screen {
         batch.end();
 
     }
-
+//test
     @Override
     public void resize(int width, int height) {}
 
