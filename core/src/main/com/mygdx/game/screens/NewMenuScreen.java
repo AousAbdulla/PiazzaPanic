@@ -17,9 +17,9 @@ public class NewMenuScreen implements Screen {
 
 
         batch = new SpriteBatch();
-        playButton = new Texture("MenuScreenPlay.png");
-        options = new Texture("MenuScreenOptions.png");
-        quit = new Texture("MenuScreenQuit.png");
+        playButton = new Texture("textures/MenuScreenPlay.png");
+        options = new Texture("textures/MenuScreenOptions.png");
+        quit = new Texture("textures/MenuScreenQuit.png");
     }
 
     @Override
@@ -31,12 +31,12 @@ public class NewMenuScreen implements Screen {
     public void render(float delta) {
         batch.begin();
         batch.draw(playButton,0f ,0f);
-        batch.draw(options,0f ,0f);
-        batch.draw(quit,0f ,0f);
+        batch.draw(options,50f ,0f);
+        batch.draw(quit,100f ,0f);
         batch.end();
 
     }
-
+//test
     @Override
     public void resize(int width, int height) {}
 

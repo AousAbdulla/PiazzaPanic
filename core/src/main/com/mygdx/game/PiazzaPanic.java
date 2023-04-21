@@ -9,6 +9,8 @@ import com.mygdx.game.interact.Combination;
 import com.mygdx.game.interact.InteractableType;
 import com.mygdx.game.levels.LevelType;
 import java.util.ArrayList;
+import com.mygdx.game.screens.NewMenuScreen;
+
 import java.util.HashMap;
 
 public class PiazzaPanic extends Game {
@@ -23,7 +25,7 @@ public class PiazzaPanic extends Game {
 	HashMap<InteractableType, ArrayList<Combination>> combinationsHashmap;
 	HashMap<InteractableType, HashMap<Ingredient, Action>> actionHashmap;
 	HashMap<String, LevelType> levelTypeHashMap;
-	
+
 	@Override
 	public void create () {
 		loadJson();
