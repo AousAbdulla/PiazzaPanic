@@ -31,6 +31,8 @@ public class NewMenuScreen implements Screen {
     public void render(float delta) {
         batch.begin();
         batch.draw(playButton,0f ,0f);
+        batch.draw(options,0f ,0f);
+        batch.draw(quit,0f ,0f);
         batch.end();
 
     }
