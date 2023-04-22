@@ -3,6 +3,7 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class NewMenuScreen implements Screen {
@@ -12,8 +13,9 @@ public class NewMenuScreen implements Screen {
     //Texture logo;
 
     SpriteBatch batch;
-//test
-Viewport viewport;
+//New
+    ScreenViewport viewport;
+
     public NewMenuScreen (){
 
 
@@ -21,19 +23,30 @@ Viewport viewport;
         playButton = new Texture("textures/MenuScreenPlay.png");
         options = new Texture("textures/MenuScreenOptions.png");
         quit = new Texture("textures/MenuScreenQuit.png");
+
+        viewport = new ScreenViewport();
     }
 
     @Override
-    public void show() {
-//test
-    }
+    public void show() {}
 
     @Override
     public void render(float delta) {
+        viewport.apply();
+        batch.setProjectionMatrix(viewport.getCamera().combined);
+
+        float centerX = viewport.getWorldWidth() /2;
+        float centerY = viewport.getWorldHeight() /2;
+
+        float buttonWidth = playButton.getWidth();
+        float buttonHeight = playButton.getHeight();
+
+
+//test
         batch.begin();
-        batch.draw(playButton,0f ,0f);
-        batch.draw(options,50f ,0f);
-        batch.draw(quit,100f ,0f);
+        batch.draw(playButton, centerX - buttonWidth / 2, centerY-buttonHeight / 2 +100);
+        batch.draw(options,centerX - buttonWidth / 2, centerY-buttonHeight / 2);
+        batch.draw(quit,centerX - buttonWidth / 2, (centerY-buttonHeight / 2) -1000);
         batch.end();
 
     }
