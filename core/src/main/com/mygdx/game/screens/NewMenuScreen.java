@@ -42,7 +42,7 @@ public class NewMenuScreen implements Screen {
         float buttonHeight = playButton.getHeight();
 
 
-//test
+//testa
         batch.begin();
         batch.draw(playButton, centerX - buttonWidth / 2, centerY-buttonHeight / 2 +100);
         batch.draw(options,centerX - buttonWidth / 2, centerY-buttonHeight / 2);
