@@ -3,42 +3,45 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 public class NewMenuScreen implements Screen {
     Texture playButton;
     Texture options;
     Texture quit;
-    //Texture logo;
 
     SpriteBatch batch;
 
+    ScreenViewport viewport;
 
-    public NewMenuScreen (){
-
-
+    public NewMenuScreen () {
         batch = new SpriteBatch();
         playButton = new Texture("textures/MenuScreenPlay.png");
         options = new Texture("textures/MenuScreenOptions.png");
         quit = new Texture("textures/MenuScreenQuit.png");
+
+        viewport = new ScreenViewport();
     }
 
     @Override
-    public void show() {
-//test
-    }
+    public void show() {}
 
     @Override
     public void render(float delta) {
-        batch.begin();
-        batch.draw(playButton,0f ,0f);
-        batch.draw(options,50f ,0f);
-        batch.draw(quit,100f ,0f);
-        batch.end();
+        viewport.apply();
+        batch.setProjectionMatrix(viewport.getCamera().combined);
 
+        batch.begin();
+        batch.draw(playButton, 0f, 0f);
+        batch.draw(options, 50f, 0f);
+        batch.draw(quit, 100f, 0f);
+        batch.end();
     }
-//test
+
     @Override
-    public void resize(int width, int height) {}
+    public void resize(int width, int height) {
+        viewport.update(width, height);
+    }
 
     @Override
     public void pause() {}
@@ -50,7 +53,5 @@ public class NewMenuScreen implements Screen {
     public void hide() {}
 
     @Override
-    public void dispose() {
-
-    }
+    public void dispose() {}
 }
