@@ -31,7 +31,7 @@ public class MenuScreen implements Screen {
         quit.setCenter(0,-200);
         viewport = new ScreenViewport();
     }
-//
+
     @Override
     public void show() {}
 
