@@ -10,7 +10,7 @@ import com.mygdx.game.interact.InteractableType;
 import com.mygdx.game.levels.LevelType;
 import java.util.ArrayList;
 
-import com.mygdx.game.screens.MenuScreen;
+import com.mygdx.game.MenuScreen;
 
 import java.util.HashMap;
 
@@ -32,7 +32,7 @@ public class PiazzaPanic extends Game {
 	@Override
 	public void create () {
 		loadJson();
-		NewMenuScreen = new MenuScreen(this);
+		NewMenuScreen = new MenuScreen();
 		setScreen(NewMenuScreen);
 	}
 
@@ -53,7 +53,7 @@ public class PiazzaPanic extends Game {
 	public void goToMenu()
 	{
 		System.out.println("RETURNED TO MAIN MENU");
-		NewMenuScreen = new MenuScreen(this);
+		NewMenuScreen = new MenuScreen();
 		setScreen(NewMenuScreen);
 	}
 
