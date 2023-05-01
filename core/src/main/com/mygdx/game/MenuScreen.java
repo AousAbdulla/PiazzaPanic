@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -69,13 +70,14 @@ public class MenuScreen implements Screen {
             if (playButton.getBoundingRectangle().contains(position.x, position.y)) {
                 // Code to be executed when the button is pressed
                 System.out.println("The play button was pressed");
+
+                // Switch to GameScreen
+                ((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
             }
             if (options.getBoundingRectangle().contains(position.x, position.y)) {
-                // Code to be executed when the button is pressed
                 System.out.println("The options button was pressed");
             }
             if (quit.getBoundingRectangle().contains(position.x, position.y)) {
-                // Code to be executed when the button is pressed
                 System.out.println("The quit button was pressed");
             }
         }
